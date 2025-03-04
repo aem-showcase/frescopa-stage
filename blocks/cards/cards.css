@@ -61,7 +61,8 @@
 }
 
 .numbered .cards-card-body::before {
-  content: '1';
+  counter-increment: my-sec-counter;
+  content: counter(my-sec-counter);
   position: absolute;
   top: 50%;
   left: 50%;

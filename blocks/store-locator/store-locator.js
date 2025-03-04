@@ -14,17 +14,7 @@ export async function initMap(map, locations) {
     zoom: 8,
     mapId: '4504f8b37365c3d0',
     disableDefaultUI: true,
-    keyboardShortcuts: false,
-    styles: [
-      {
-        featureType: 'all',
-        stylers: [
-          { lightness: -5 },
-          { saturation: -100 },
-          { visibility: 'simplified' },
-        ],
-      },
-    ],
+    keyboardShortcuts: false
   });
   // eslint-disable-next-line no-undef
   const infoWindow = new google.maps.InfoWindow({
