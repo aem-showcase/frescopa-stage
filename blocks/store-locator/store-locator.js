@@ -17,14 +17,15 @@ export async function initMap(map, locations) {
     keyboardShortcuts: false,
     styles: [
       {
-        featureType: "all",
+        featureType: 'all',
         stylers: [
-          { lightness : -5 },
+          { lightness: -5 },
           { saturation: -100 },
-          { visibility : "simplified" }
-        ]
-      }
-    ]  });
+          { visibility: 'simplified' },
+        ],
+      },
+    ],
+  });
   // eslint-disable-next-line no-undef
   const infoWindow = new google.maps.InfoWindow({
     map,
@@ -115,7 +116,7 @@ export default function decorate(block) {
       <div class="map" id="locator-map">
     </div>
   </div>
-  `)
+  `);
 
   window.initMap = async () => {
     const res = await initMap(map, locations);
@@ -130,5 +131,4 @@ export default function decorate(block) {
   };
 
   block.append(locatorDOM);
-
 }

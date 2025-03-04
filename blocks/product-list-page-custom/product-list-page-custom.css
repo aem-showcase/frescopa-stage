@@ -8,6 +8,7 @@ main .section.product-list-page-custom-container > .default-content-wrapper h1:f
 .product-list-page-custom {
   display: flex !important;
   gap: 2rem;
+  margin: 40px 0;
 }
 
 .product-list-page-custom .facets {
@@ -381,7 +382,6 @@ main .section.product-list-page-custom-container > .default-content-wrapper h1:f
 .product-list-page-custom .products .list > ol > li .picture {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1.2;
   position: relative;
   overflow: hidden;
 }
@@ -397,8 +397,10 @@ main .section.product-list-page-custom-container > .default-content-wrapper h1:f
 
 .product-list-page-custom .products .list > ol > li .picture picture {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 75%;
+  height: 75%;
+  margin-left: auto;
+  margin-right: auto;
   grid-area: 1 / 1 / 1 / 1;
 }
 
@@ -423,14 +425,13 @@ main .section.product-list-page-custom-container > .default-content-wrapper h1:f
 }
 
 .product-list-page-custom .products .list > ol > li .name a {
-  font: var(--type-headline-2-strong-font);
-  letter-spacing: var(--type-headline-2-strong-letter-spacing);
+  font: normal normal normal 36px/42px Baskerville;
+  letter-spacing: 0;
   display: inline-block;
-  line-height: 1.3;
   text-decoration: none;
   text-overflow: ellipsis;
   overflow: hidden;
-  height: 6.1rem;
+  margin-top: 20px;
 }
 
 .product-list-page-custom .products .list > ol > li .name a:hover {
@@ -479,7 +480,7 @@ main .section.product-list-page-custom-container > .default-content-wrapper h1:f
 }
 
 .product-list-page-custom .products .pagination {
-  display: flex;
+  display: none;
   height: 3.6rem;
   justify-content: space-between;
   padding-bottom: 3rem;
@@ -537,7 +538,7 @@ main .section.product-list-page-custom-container > .default-content-wrapper h1:f
   }
 
   main .section > div.product-list-page-custom-wrapper {
-    max-width: 1920px;
+    max-width: 1360px;
   }
 
   .product-list-page-custom .facets {
@@ -574,7 +575,7 @@ main .section.product-list-page-custom-container > .default-content-wrapper h1:f
   }
 
   .product-list-page-custom .products .list > ol {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .product-list-page-custom .products .list > ol > li .picture:hover button {
@@ -583,6 +584,10 @@ main .section.product-list-page-custom-container > .default-content-wrapper h1:f
 
   .product-list-page-custom .products .pagination > div:nth-child(2) {
     display: block;
+  }
+
+  .product-list-page-custom .products .title {
+    display: none;
   }
 
   .product-list-page-custom .products .title h1 ~ span {

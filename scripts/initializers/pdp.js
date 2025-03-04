@@ -70,15 +70,11 @@ await initializeDropin(async () => {
 })();
 
 async function preloadImageMiddleware(data) {
-  const image = data?.images?.[0]?.url?.replace(/^https?:/, '');
+  const image = data?.images?.[0]?.url;
 
   if (image) {
     await UI.render(Image, {
       src: image,
-      ...IMAGES_SIZES.mobile,
-      params: {
-        ...IMAGES_SIZES,
-      },
       loading: 'eager',
     })(document.createElement('div'));
   }
