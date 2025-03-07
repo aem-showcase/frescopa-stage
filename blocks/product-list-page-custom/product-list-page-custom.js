@@ -71,7 +71,7 @@ export const productSearchQuery = (addCategory = false) => `query ProductSearch(
           productView {
               name
               sku
-              description
+              shortDescription
               urlKey
               images(roles: "thumbnail") {
                 url
@@ -457,12 +457,8 @@ class ProductListPage extends Component {
   };
 
   async componentDidMount() {
-    if (window.loadCategoryPromise) {
-      const state = await window.loadCategoryPromise;
-      await this.loadState(state);
-    } else {
-      await this.loadProducts();
-    }
+
+    await this.loadProducts();
 
     // Special optimization for mobile
     if ('IntersectionObserver' in window && isMobile && this.state.products.items.length === 6 && this.state.products.total > 6) {
