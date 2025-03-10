@@ -53,7 +53,12 @@
             {
               "name": "Article",
               "value": "article"
+            },
+            {
+              "name": "Columns",
+              "value": "columns"
             }
+            
           ]
         }
       ]
@@ -80,7 +85,8 @@
         "product-list-page",
         "product-list-page-custom",
         "product-details",
-        "video"
+        "video",
+        "form"
       ]
     }
   ]
