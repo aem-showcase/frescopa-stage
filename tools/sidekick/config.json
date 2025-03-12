@@ -1,5 +1,5 @@
 {
-  "project": "Frescopa",
+  "project": "Frescopa Stage",
   "editUrlLabel": "AEM Editor",
   "editUrlPattern": "{{contentSourceUrl}}{{pathname}}?cmd=open",
   "plugins": [
