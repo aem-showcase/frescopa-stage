@@ -23,7 +23,11 @@ export default async function initializeRuleEngineWorker(formDef, renderHTMLForm
     const form = ruleEngine.createFormInstance(formDef);
     return renderHTMLForm(form.getState(true), formDef.data);
   }
-  const myWorker = new Worker(`${window.hlx.codeBasePath}/blocks/form/rules/RuleEngineWorker.js`, { type: 'module' });
+  let base = window.hlx.codeBasePath;
+  if (location.hostname.indexOf('author') > -1) {
+    base = location.origin + '/content/frescopa.resource';
+  }
+  const myWorker = new Worker(`${base}/blocks/form/rules/RuleEngineWorker.js`, { type: 'module' });
 
   myWorker.postMessage({
     name: 'init',
