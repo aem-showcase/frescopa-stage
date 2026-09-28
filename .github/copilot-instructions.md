@@ -80,5 +80,10 @@ files can be overwritten by the next scheduled sync.
   check fails with "Rejected: provide test url". Add a "URL for testing" section pointing at the
   AEM live preview for the PR's branch, using the pattern
   `https://<branch>--<repo>--<owner>.aem.page/` (owner = the account/org the branch was pushed
-  from, e.g. a fork owner if you don't have push access to this repo), for example:
-  `https://fix-teaser-delivery-tier-image-link--frescopa-stage--fe-lix-.aem.page/`.
+  from, e.g. a fork owner if you don't have push access to this repo). Since `.aem.page` hostnames
+  are DNS labels, a trailing `-` in the owner name (e.g. GitHub handle `fe-lix-`) is dropped from
+  the domain — use `https://fix-teaser-delivery-tier-image-link--frescopa-stage--fe-lix.aem.page/`,
+  not `...--fe-lix-.aem.page/`. Verify the URL returns real HTML (`curl -I <url>`) before adding it
+  to the PR description; the check re-runs its own Lighthouse pass against that exact URL on every
+  new commit, so pushing a follow-up commit (e.g. an empty commit) after fixing the description
+  re-triggers it.
