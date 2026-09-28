@@ -8,8 +8,13 @@
         "label": "Title"
       },
       {
-        "component": "reference",
-        "name": "image"
+        "component": "custom-asset-namespace:custom-asset",
+        "name": "image",
+        "configUrl": "https://main--frescopa-stage--aem-showcase.aem.live/tools/assets-selector/image.config.json"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "name": "imageMimeType"
       },
       {
         "component": "text",
@@ -22,10 +27,15 @@
     "id": "image",
     "fields": [
       {
-        "component": "reference",
+        "component": "custom-asset-namespace:custom-asset",
         "name": "image",
         "label": "Image",
+        "configUrl": "https://main--frescopa-stage--aem-showcase.aem.live/tools/assets-selector/image.config.json",
         "multi": false
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "name": "imageMimeType"
       },
       {
         "component": "text",
@@ -183,11 +193,17 @@
     "id": "card",
     "fields": [
       {
-        "component": "reference",
+        "component": "custom-asset-namespace:custom-asset",
         "valueType": "string",
         "name": "image",
         "label": "Image",
+        "configUrl": "https://main--frescopa-stage--aem-showcase.aem.live/tools/assets-selector/image.config.json",
         "multi": false
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string",
+        "name": "imageMimeType"
       },
       {
         "component": "richtext",
@@ -4793,11 +4809,17 @@
     "id": "hero",
     "fields": [
       {
-        "component": "reference",
+        "component": "custom-asset-namespace:custom-asset",
         "valueType": "string",
         "name": "image",
         "label": "Image",
+        "configUrl": "https://main--frescopa-stage--aem-showcase.aem.live/tools/assets-selector/image.config.json",
         "multi": false
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string",
+        "name": "imageMimeType"
       },
       {
         "component": "text",
@@ -4929,12 +4951,18 @@
     "id": "reward-sticky",
     "fields": [
       {
-        "component": "reference",
+        "component": "custom-asset-namespace:custom-asset",
         "valueType": "string",
         "name": "fileReference",
         "label": "Image",
         "description": "The reward image, min Xpx x Ypx...",
+        "configUrl": "https://main--frescopa-stage--aem-showcase.aem.live/tools/assets-selector/image.config.json",
         "multi": false
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string",
+        "name": "fileReferenceMimeType"
       },
       {
         "component": "text",
@@ -5148,12 +5176,18 @@
     "id": "reward",
     "fields": [
       {
-        "component": "reference",
+        "component": "custom-asset-namespace:custom-asset",
         "valueType": "string",
         "name": "fileReference",
         "label": "Image",
         "description": "The reward image, min Xpx x Ypx...",
+        "configUrl": "https://main--frescopa-stage--aem-showcase.aem.live/tools/assets-selector/image.config.json",
         "multi": false
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string",
+        "name": "fileReferenceMimeType"
       },
       {
         "component": "text",
@@ -5367,11 +5401,17 @@
     "id": "storelocator",
     "fields": [
       {
-        "component": "reference",
+        "component": "custom-asset-namespace:custom-asset",
         "valueType": "string",
         "name": "fileReference",
         "label": "Background Image",
+        "configUrl": "https://main--frescopa-stage--aem-showcase.aem.live/tools/assets-selector/image.config.json",
         "multi": false
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string",
+        "name": "fileReferenceMimeType"
       },
       {
         "component": "text-input",
@@ -5386,12 +5426,18 @@
     "id": "teaser",
     "fields": [
       {
-        "component": "reference",
+        "component": "custom-asset-namespace:custom-asset",
         "valueType": "string",
         "name": "fileReference",
         "label": "Image",
         "description": "The teaser image, min Xpx x Ypx...",
+        "configUrl": "https://main--frescopa-stage--aem-showcase.aem.live/tools/assets-selector/image.config.json",
         "multi": false
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string",
+        "name": "fileReferenceMimeType"
       },
       {
         "component": "text",
@@ -5605,11 +5651,17 @@
     "id": "video",
     "fields": [
       {
-        "component": "reference",
+        "component": "custom-asset-namespace:custom-asset",
         "valueType": "string",
         "name": "video_placeholder",
         "label": "Placeholder Image",
+        "configUrl": "https://main--frescopa-stage--aem-showcase.aem.live/tools/assets-selector/image.config.json",
         "multi": true
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string",
+        "name": "video_placeholderMimeType"
       },
       {
         "component": "aem-content",

@@ -1,0 +1,30 @@
+{
+  "repoNames": [
+    "author-p149891-e1546481.adobeaemcloud.com",
+    "delivery-p149891-e1546482.adobeaemcloud.com"
+  ],
+  "aemTierType": [
+    "author",
+    "delivery"
+  ],
+  "filterSchema": [
+    {
+      "groupKey": "FileTypeGroup",
+      "header": "File Type",
+      "fields": [
+        {
+          "element": "checkbox",
+          "name": "type",
+          "defaultValue": ["image/*"],
+          "options": [
+            {
+              "label": "Image",
+              "value": "image/*",
+              "readOnly": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

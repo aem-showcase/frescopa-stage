@@ -21,11 +21,17 @@
       "id": "hero",
       "fields": [
         {
-          "component": "reference",
+          "component": "custom-asset-namespace:custom-asset",
           "valueType": "string",
           "name": "image",
           "label": "Image",
+          "configUrl": "https://main--frescopa-stage--aem-showcase.aem.live/tools/assets-selector/image.config.json",
           "multi": false
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "imageMimeType"
         },
         {
           "component": "text",

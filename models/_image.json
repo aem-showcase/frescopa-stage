@@ -18,10 +18,15 @@
       "id": "image",
       "fields": [
         {
-          "component": "reference",
+          "component": "custom-asset-namespace:custom-asset",
           "name": "image",
           "label": "Image",
+          "configUrl": "https://main--frescopa-stage--aem-showcase.aem.live/tools/assets-selector/image.config.json",
           "multi": false
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "name": "imageMimeType"
         },
         {
           "component": "text",
