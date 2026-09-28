@@ -175,6 +175,7 @@ async function applyTemplates(doc) {
   }
 }
 
+// matches links whose href points directly at a supported raster/vector image file
 const IMAGE_HREF_RE = /\.(?:avif|webp|png|jpe?g|gif|svg)$/i;
 
 /**
