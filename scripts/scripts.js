@@ -207,6 +207,7 @@ export function decorateLinkedPictures(main) {
       img.src = href;
       picture.append(img);
     }
+    moveInstrumentation(link, picture);
     link.replaceWith(picture);
   });
 }
