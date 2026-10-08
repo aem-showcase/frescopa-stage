@@ -178,6 +178,18 @@ async function applyTemplates(doc) {
 const IMAGE_HREF_RE = /\.(?:avif|webp|png|jpe?g|gif|svg)$/i;
 
 /**
+ * Checks whether an image URL is served from this site's own origin, and can therefore be
+ * resized/reformatted by this site's image optimizer. Cross-origin images (e.g. delivery-tier
+ * assets such as Adobe Stock/DAM URLs from decorateLinkedPictures) can't be resized by this site
+ * and must be used as-is.
+ * @param {string} src The image URL (absolute or relative)
+ * @returns {boolean} true if the image is same-origin
+ */
+export function isSameOriginImage(src) {
+  return new URL(src, window.location.href).origin === window.location.origin;
+}
+
+/**
  * In AEM Authoring on Edge Delivery Services (Crosswalk/XWalk), image references that live on
  * the "delivery tier" (e.g. Adobe Stock assets served through the AEM Assets Delivery API, or
  * DAM paths that the pipeline didn't resolve into markup) are not turned into a <picture> by the
@@ -195,7 +207,7 @@ export function decorateLinkedPictures(main) {
 
     const alt = link.textContent.trim();
     let picture;
-    if (url.origin === window.location.origin) {
+    if (isSameOriginImage(url.href)) {
       // same-origin assets can be routed through the site's own image optimizer
       picture = createOptimizedPicture(url.pathname, alt);
     } else {
@@ -208,6 +220,16 @@ export function decorateLinkedPictures(main) {
       picture.append(img);
     }
     moveInstrumentation(link, picture);
+    // Unresolved delivery-tier links carry no data-aue-* attributes of their own (unlike
+    // dynamic-media assets the pipeline resolves directly into an instrumented <img>), so
+    // moveInstrumentation above has nothing to move. Fall back to the standard AEM image-field
+    // instrumentation on the <img> so Universal Editor can still select/edit it.
+    const img = picture.querySelector('img');
+    if (!img.hasAttribute('data-aue-prop')) {
+      img.setAttribute('data-aue-prop', 'image');
+      img.setAttribute('data-aue-label', 'Image');
+      img.setAttribute('data-aue-type', 'media');
+    }
     link.replaceWith(picture);
   });
 }
